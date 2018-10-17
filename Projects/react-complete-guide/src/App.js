@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person'
 
 class App extends Component {
@@ -57,11 +56,7 @@ class App extends Component {
       border: '1px solid black',
       padding: '8px',
       curosr: 'pointer',
-      ':hover' : {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
-    };
+     };
 
     let persons = null;
     if ( this.state.showPersons ) {
@@ -81,10 +76,6 @@ class App extends Component {
       );
 
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'pink',
-        color: 'black'
-      };
     }
 
     // The join(' ') method will convert 
@@ -102,19 +93,17 @@ class App extends Component {
     }    
 
     return (
-      <StyleRoot>
-        <div className="App">
-          <h1>This is a React 16.5.2 Application</h1>
-          <p className={classes.join(' ')}>This is really working!</p>
-          <button
-            style={style}
-            onClick={this.togglePersonsHandler}>Toggle Names
-          </button>
-          {persons}
-        </div>
-      </StyleRoot>
+      <div className="App">
+        <h1>This is a React 16.5.2 Application</h1>
+        <p className={classes.join(' ')}>This is really working!</p>
+        <button
+          style={style}
+          onClick={this.togglePersonsHandler}>Toggle Names
+        </button>
+        {persons}
+      </div>
     );
   }
 }
 
-export default Radium(App);
+export default App;
